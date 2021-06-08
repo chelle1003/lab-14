@@ -1,0 +1,25 @@
+print("SIMPAN PINJAM MONEY")
+print()
+import re
+pola = "^.(?=.{8,})(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&+=]).$"
+password = input("Masukkan passwordmu: ")
+hasil = re.findall(pola, password)
+if (hasil):
+    print ("Password Valid")
+else:
+    print ("Password Tidak Valid")
+
+banyak=int(input("Masukkan banyaknya akun yang ingin di cek:"))
+for h in range (banyak):
+    angka=input("Masukkan nomor akun:")
+    m=re.findall("^[123]",angka)
+    i=re.findall("\s",angka)
+
+    if (m):
+        if(len(angka)==10):
+            print("Nomor akun anda terdaftar")
+        else:
+            print("Nomor akun anda tidak terdaftar")
+    elif (i):
+        print("Nomor akun anda tidak terdaftar")      
+  
